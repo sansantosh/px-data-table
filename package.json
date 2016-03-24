@@ -20,6 +20,9 @@
     "grunt-dep-serve": "git+https://github.com/GeneralElectric/grunt-dep-serve.git#master",
     "grunt-sass": "^v1.0.0",
     "grunt-shell": "~v1.1.1",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-vulcanize": "^1.0.0",
+    "grunt-wiredep": "^2.0.0",
     "node-sass-import-once": "^1.2.0"
   }
 }

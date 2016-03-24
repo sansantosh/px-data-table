@@ -119,6 +119,33 @@ module.exports = function (grunt) {
             commitFiles: ['package.json', 'bower.json'],
             push: false
           }
+        },
+
+        vulcanize: {
+            default: {
+                options: {
+                    inlineScript: true
+                },
+
+                files: {
+                    'build.html': 'demo.html'
+                },
+            },
+        },
+        wiredep: {
+          target: {
+            src: 'index.html' // point to your HTML file.
+          }
+        },
+        replace: {
+          another_example: {
+            src: ['*.html'],
+            overwrite: true,                 // overwrite matched source files
+            replacements: [{
+              from: "../",
+              to: "bower_components/"
+            }]
+          }
         }
     });
 
@@ -131,6 +158,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-bump');
+    grunt.loadNpmTasks('grunt-vulcanize');
+    grunt.loadNpmTasks('grunt-wiredep');
+    grunt.loadNpmTasks('grunt-text-replace');
 
 
     // Default task.
